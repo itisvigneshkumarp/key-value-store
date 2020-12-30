@@ -200,6 +200,7 @@ public class DataStore {
    * @return - boolean
    */
   private boolean validateKey(String key) {
+    this.readFile();
     long currentInSeconds = new Date().getTime() / 1000;
     if (!this.dataStore.containsKey(key))
       throw new IllegalArgumentException("Error: Key does not exist");
